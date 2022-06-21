@@ -19,6 +19,6 @@ function instagram() {
 function facebook() {
     window.open("https://web.facebook.com");
 }
-function linkedIn() {
-    window.open("https://www.linkedin.com");
+function twitter() {
+    window.open("https://www.twitter.com");
 }
