@@ -1,0 +1,500 @@
+:root {
+    --color-primary: rgb(250, 219, 153);
+    --color-primary-hover: #575354;
+    --color-light-gray: #f5f5f5;
+    --color-light-black: #191919;
+    --color-white: #ffffff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.856);
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    opacity: 0.9;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    transition: 0.3s;
+}
+  
+  body {
+    font-size: 18px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+
+  .background-overlay {
+    background-image:  url("../img/neverstop.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .container {
+    font-size: 35px;
+    margin: 0 auto;
+    max-width: 100%;
+    opacity: 0.9;
+
+  }
+  
+  .divider {
+    border: 4px solid var(rgb(236, 178, 108));
+    width: 100px;
+    margin: 20px auto;
+  }
+  
+  
+
+:root {
+    --color-primay: #D2C2B0;
+    --color-background-seconday: #1F1F24;
+    --color-white: #ffffff;
+    --color-terracota: #ec7c4a;
+}
+
+/* 3 Circulos e Carrosel */
+
+main {
+    background-color: var(--color-background-seconday)
+}
+
+.card-container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-container1 .circulo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.circulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-c {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: unset;
+}
+
+.circulo:hover {
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+}
+
+/* Carrosel */
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card1 {
+    width: 300px;
+    height: 320px;
+    border: 100%;
+    border-radius: 50%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-image: url(./img/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.card2 {
+    width: 300px;
+    height: 320px;
+    border: 100%;
+    border-radius: 50%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-image: url(./img/2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.card3 {
+    width: 300px;
+    height: 320px;
+    border: 100%;
+    border-radius: 50%;
+    margin: 3rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-image: url(./img/3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.card-text {
+    width: 50%;
+    letter-spacing: 7px;
+    color: var(--color-white);
+}
+
+.linha-text {
+    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-white);
+    padding-bottom: 8px;
+    line-height: 1.9;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+
+.slides-list {
+    /*remove os estilos da lista*/
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    width: 400%;
+    min-height: 300px;
+    --total-items: 3;
+    width: calc(var(--total-items) * 100%);
+    position: relative;
+    left: 0%;
+    position: relative;
+    left: calc(var(--selected-item) * -100%);
+    --selected-item: 0;
+    transition: left 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    /* 
+      deixa todos os itens da lista
+      na horizontal e todos com a
+      mesma largura
+    */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    text-align: center;
+}
+
+.slide-show {
+    overflow: hidden;
+}
+
+.slide-controller:nth-child(1):checked~.slide-show .slides-list {
+    --selected-item: 0;
+}
+
+.slide-controller:nth-child(2):checked~.slide-show .slides-list {
+    --selected-item: 1;
+}
+
+.slide-controller:nth-child(3):checked~.slide-show .slides-list {
+    --selected-item: 2;
+}
+
+
+.slide-show img {
+    width: 50%;
+}
+
+.clientes {
+    height: 20%;
+    width: 20%;
+    margin-left: 40%;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    
+
+}
+
+/* Slideshow container */
+.mainBaixoContainer {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color: rgba(224, 168, 63, 0.01);
+}
+
+/* Hide the images by default */
+.slidesClientes {
+    display: none;
+}
+
+.text {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 15px;
+    padding: 20px 10px;
+    position: absolute;
+
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color:hsl(14, 89%, 65%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.formContainer {
+    color: white;
+    border-radius: 5px;
+    background-color:  rgba(0, 0, 0, 0);
+    padding: 20px;
+}
+
+
+.mapContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    color: black;
+    background-color: rgb(210, 194, 176);
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+h2 {
+  margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+iframe {
+    width: 70%;
+    height: 500px;
+    margin-bottom: 100px;
+    border-radius: 3%;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    display: flex;
+    position: center;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+.botoes{
+  
+  margin-left: 150px;
+}
+.botoes>img{
+  width:35px;
+  align-items: center;
+}
+
+
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* page header start */
+  
+  #page-header {
+    position: relative;
+    background-color: var(--color-light-black);
+    padding: 20px;
+  }
+  
+  #page-header .container {
+    position: relative;
+  }
+  
+  #page-header #page-header-content {
+    color: var(--color-white);
+    text-align: center;
+    padding: 200px 0;
+  }
+  
+  #page-header #page-header-content h1 {
+    font-size: 72px;
+  }
+  
+  #page-header #page-header-content h2 {
+    font-size: 32px;
+  }
+  
+  #page-header #page-header-content .btn {
+    margin-top: 80px;
+  }
+  #quote {
+    background-color: var(--color-light-gray);
+    padding: 40px 0;
+  }
+  
+  #quote .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  #quote #quote-content {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  /* section quote end */
+  
+  /* section upcoming events start */
+  
+ 
+  
+  /* section upcoming events end */
+  
+  /* section explore start */
+  
+  #explore {
+    background:  rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  
+  #explore #explore-content div {
+    width: 500px;
+  }
+  
+  #explore #explore-content .section-title {
+    text-align: left;
+  }
+  
+  #explore #explore-content .divider {
+    margin-left: 0;
+  }
+  
+  /* section explore end */
+  
+  /* upcoming tours start */
+
+  @media screen and (min-device-width : 375px) and (max-device-width : 900px) {
+    /* celulares */ 
+    .linha-text{
+        letter-spacing: 1px;
+      }
+    .mapContainer {
+        height: 30vh;
+      }
+      .background-overlay {
+        background-image:  url("../img/neverstop.gif");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 100%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+  }
